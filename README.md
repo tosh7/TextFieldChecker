@@ -12,11 +12,12 @@ RxSwiftを使用してTextFieldの入力内容をチェックする
 
 ## Viewをコードで書くときの注意点
 - ~まずはパーツに対してframeを定義してあげないとaddSubviewをしても画面に反応しない~  
-反応しなたっかた原因は、どうやらAutoLayoutを反応させるためにはtranslatesAutoresizingMaskIntoConstraintsをfalseにしてなかったため
+反応しなたっかた原因は、どうやらAutoLayoutを反応させるためには`translatesAutoresizingMaskIntoConstraints`を`false`にしてなかったため
 - その上で、制約をAutoLayoutを書いてあげるイメージ
-- AutoLayoutを反応させるためには`translatesAutoresizingMaskIntoConstraints`を`false`に
+- AutoLayoutを反応させるためには`translatesAutoresizingMaskIntoConstraints`を`false`  
+→このプロパティはどうやらAutoLayout以前に使用されていた`AutoresizingMask`のプロパティを使用するかどうかを判断しているもの、これをオフにして、AutoLayoutの仕様へと変更しているイメージ
 
 ## 参考
 - [初期画面読み込みについて](https://qiita.com/omochimetaru/items/31df103ef98a9d84ae6b)
 - [Viewをコードで作成する方法](https://qiita.com/i_kawashima41/items/c02379650b9d5696d54a)
-- [AutoLayoutについての記事](0https://qiita.com/dddisk/items/8001598ea7951bcdcc30)
+- [AutoLayoutについての記事](https://qiita.com/dddisk/items/8001598ea7951bcdcc30)
