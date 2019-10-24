@@ -85,15 +85,31 @@
 		2B0FB482235E19F700295E28 /* TextFieldChecker */ = {
 			isa = PBXGroup;
 			children = (
-				2B0FB483235E19F700295E28 /* AppDelegate.swift */,
-				2B0FB485235E19F700295E28 /* SceneDelegate.swift */,
-				2B0FB487235E19F700295E28 /* TopViewController.swift */,
-				2BCDE7AD235EC3AC00C05C38 /* TopViewModel.swift */,
 				2B0FB48C235E19FC00295E28 /* Assets.xcassets */,
 				2B0FB48E235E19FC00295E28 /* LaunchScreen.storyboard */,
 				2B0FB491235E19FC00295E28 /* Info.plist */,
+				2BA4D1A12361A78C006E6C44 /* Sources */,
 			);
 			path = TextFieldChecker;
+			sourceTree = "<group>";
+		};
+		2BA4D1A12361A78C006E6C44 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2B0FB483235E19F700295E28 /* AppDelegate.swift */,
+				2B0FB485235E19F700295E28 /* SceneDelegate.swift */,
+				2BA4D1A22361A7A6006E6C44 /* Top */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2BA4D1A22361A7A6006E6C44 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				2B0FB487235E19F700295E28 /* TopViewController.swift */,
+				2BCDE7AD235EC3AC00C05C38 /* TopViewModel.swift */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 		2BCDE7A4235E20ED00C05C38 /* Frameworks */ = {
