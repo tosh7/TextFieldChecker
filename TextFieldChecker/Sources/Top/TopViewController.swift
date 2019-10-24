@@ -22,11 +22,10 @@ final class TopViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private lazy var label:UILabel = {
+    private let label:UILabel = {
        let label = UILabel()
         label.text = "とりまAutolayoutテスト"
         label.textColor = UIColor.red
-        label.frame = view.frame
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
