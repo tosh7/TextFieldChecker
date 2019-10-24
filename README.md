@@ -11,7 +11,8 @@ RxSwiftを使用してTextFieldの入力内容をチェックする
 3. Run `carthage update --platform ios` to install tools and dependencies.
 
 ## Viewをコードで書くときの注意点
-- まずはパーツに対してframeを定義してあげないとaddSubviewをしても画面に反応しない
+- ~まずはパーツに対してframeを定義してあげないとaddSubviewをしても画面に反応しない~  
+反応しなたっかた原因は、どうやらAutoLayoutを反応させるためにはtranslatesAutoresizingMaskIntoConstraintsをfalseにしてなかったため
 - その上で、制約をAutoLayoutを書いてあげるイメージ
 - AutoLayoutを反応させるためには`translatesAutoresizingMaskIntoConstraints`を`false`に
 
