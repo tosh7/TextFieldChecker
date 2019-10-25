@@ -18,27 +18,36 @@ final class TopViewController: UIViewController {
     
     required init?(coder: NSCoder) { fatalError() }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let backGroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "main_img")
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
-    private let label:UILabel = {
-       let label = UILabel()
-        label.text = "とりまAutolayoutテスト"
-        label.textColor = UIColor.red
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let waveImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "wave")
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
 }
 
 extension TopViewController {
     private func setUpView() {
-        view.addSubview(label)
+        view.addSubview(backGroundImageView)
+        view.addSubview(waveImageView)
         
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        label.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        backGroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backGroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        backGroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backGroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        waveImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        waveImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        waveImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
 }
 
