@@ -18,6 +18,12 @@ final class TopViewController: UIViewController {
     
     required init?(coder: NSCoder) { fatalError() }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor.red
+    }
+    
     private let backGroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "main_img")
