@@ -9,9 +9,14 @@
 import UIKit
 
 final class RootViewController: UIViewController {
-    init() {
+    init(viewModel: RootViewModelType, navigator: RootNavigator) {
+        self.viewModel = viewModel
+        self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) { fatalError() }
+    
+    private let viewModel: RootViewModelType
+    private let navigator: RootNavigatorType
 }

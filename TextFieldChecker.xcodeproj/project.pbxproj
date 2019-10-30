@@ -16,6 +16,7 @@
 		2B372FBE2369FE7D0037ADE4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FBD2369FE7D0037ADE4 /* RootViewController.swift */; };
 		2B372FC02369FE980037ADE4 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FBF2369FE980037ADE4 /* RootNavigator.swift */; };
 		2B372FC22369FEA90037ADE4 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FC12369FEA90037ADE4 /* RootViewModel.swift */; };
+		2B372FC4236A044D0037ADE4 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FC3236A044D0037ADE4 /* Application.swift */; };
 		2BA4D19F236195F4006E6C44 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4D19E236195F4006E6C44 /* RxRelay.framework */; };
 		2BA4D1A0236195F4006E6C44 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4D19E236195F4006E6C44 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BCDE7A6235E20ED00C05C38 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCDE7A5235E20ED00C05C38 /* RxSwift.framework */; };
@@ -53,6 +54,7 @@
 		2B372FBD2369FE7D0037ADE4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2B372FBF2369FE980037ADE4 /* RootNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
 		2B372FC12369FEA90037ADE4 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		2B372FC3236A044D0037ADE4 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		2BA4D19E236195F4006E6C44 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		2BCDE7A5235E20ED00C05C38 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		2BCDE7A9235E210100C05C38 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				2B0FB483235E19F700295E28 /* AppDelegate.swift */,
 				2B0FB485235E19F700295E28 /* SceneDelegate.swift */,
+				2B372FC3236A044D0037ADE4 /* Application.swift */,
 				2B372FBC2369FE370037ADE4 /* Root */,
 				2BA4D1A22361A7A6006E6C44 /* Top */,
 			);
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B372FC4236A044D0037ADE4 /* Application.swift in Sources */,
 				2B372FBB2369FA650037ADE4 /* TopNavigator.swift in Sources */,
 				2BCDE7AE235EC3AC00C05C38 /* TopViewModel.swift in Sources */,
 				2B372FBE2369FE7D0037ADE4 /* RootViewController.swift in Sources */,

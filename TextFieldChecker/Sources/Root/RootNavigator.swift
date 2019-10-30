@@ -13,9 +13,9 @@ protocol RootNavigatorType {
 }
 
 final class RootNavigator: RootNavigatorType {
-    private weak var navigationController: UINavigationController?
+    private weak var window: UIWindow?
     
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(window: UIWindow?) {
+        self.window = window
     }
 }
