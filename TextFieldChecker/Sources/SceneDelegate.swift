@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         
+        
         let vc = TopViewController()
         let navigationController = UINavigationController(rootViewController: vc)
         window.rootViewController = navigationController
@@ -57,5 +58,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+@available(iOS 13.0, *)
+extension SceneDelegate {
+    var rootViewController: RootViewController? {
+        return window?.rootViewController as? RootViewController
+    }
 }
 
