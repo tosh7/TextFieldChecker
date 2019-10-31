@@ -6,14 +6,19 @@
 //  Copyright © 2019 Satoshi Komatsu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol TopNavigatorType {
-    func toSignIn()
+    func toSignUp()
 }
 
 final class TopNavigator: TopNavigatorType {
-    func toSignIn() {
-        
+    private weak var navigationController: UINavigationController?
+    
+    init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    func toSignUp() {
     }
 }

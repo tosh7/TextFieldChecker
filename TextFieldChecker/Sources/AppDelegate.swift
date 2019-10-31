@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 13, *) {
         } else {
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            self.window = window
-            window.makeKeyAndVisible()
-            
-            let vc = TopViewController()
-            window.rootViewController = vc
+//            let window = UIWindow(frame: UIScreen.main.bounds)
+//            self.window = window
+//            window.makeKeyAndVisible()
+//
+//            let vc = TopViewController()
+//            window.rootViewController = vc
         }
         return true
     }

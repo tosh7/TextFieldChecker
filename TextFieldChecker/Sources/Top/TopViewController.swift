@@ -10,13 +10,18 @@ import UIKit
 
 final class TopViewController: UIViewController {
     
-    init() {
+    init(viewModel: TopViewModelType, navigator: TopNavigatorType) {
+        self.viewModel = viewModel
+        self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.white
         setUpView()
     }
     
     required init?(coder: NSCoder) { fatalError() }
+    
+    let navigator: TopNavigatorType
+    let viewModel: TopViewModelType
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
