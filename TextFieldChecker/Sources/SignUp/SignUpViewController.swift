@@ -21,8 +21,9 @@ final class SignUpViewController: UIViewController {
         self.viewModel = viewModel
         self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.saketify.backGroundColor
         setUpView()
+        self.title = "新規登録"
     }
     
     required init?(coder: NSCoder) { fatalError() }
@@ -31,6 +32,9 @@ final class SignUpViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.barTintColor = UIColor.saketify.beerYellow
+        navigationController?.navigationBar.tintColor = UIColor.saketify.backGroundColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.saketify.backGroundColor]
     }
     
     private let viewModel: SignUpViewModelType
@@ -40,16 +44,18 @@ final class SignUpViewController: UIViewController {
     
     private var emailTextField: CustomTextFieldView = {
         let view = CustomTextFieldView()
-        view.textField.placeholder = "ここはplacefolder"
-        view.label.text = "ここにもきちんと文字が出るのかを確認"
+        view.textField.placeholder = "メールアドレス"
+        view.label.text = "メールアドレスが正しくありません"
+        view.label.textColor = UIColor.red
+        view.label.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private var passwordTextField: CustomTextFieldView = {
         let view = CustomTextFieldView()
-        view.textField.placeholder = "このTextFieldはPasswprd用"
-        view.label.text = "ここにきちんと文字が出るかを確認"
+        view.textField.placeholder = "Password"
+        view.label.text = "＊英文字と数字を入れ8文字以上"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -60,9 +66,11 @@ final class SignUpViewController: UIViewController {
         button.addTarget(self,
                          action: #selector(registerButtonTapped),
                          for: .touchUpInside)
-        button.titleLabel?.text = "登録"
+        button.setTitle("Register", for: .normal)
+        button.backgroundColor = UIColor.saketify.beerYellow
+        button.alpha = 0.8
         button.isEnabled = false
-        button.backgroundColor = UIColor.red
+        button.layer.cornerRadius = 18
         return button
     }()
     
@@ -83,11 +91,11 @@ extension SignUpViewController {
         
         passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40).isActive = true
         
         registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20).isActive = true
+        registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }

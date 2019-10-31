@@ -24,12 +24,15 @@ final class CustomTextFieldView: UIStackView {
     
     lazy var textField: PaddingTextField = {
         let textField = PaddingTextField()
+        textField.backgroundColor = UIColor.saketify.shadowGray
+        textField.layer.cornerRadius = 18
         return textField
     }()
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 11)
         return label
     }()
 }
