@@ -15,9 +15,9 @@ final class ValidationChecker {
             return .empty
         } else {
             if email.isEmail {
-                return .error(with: "無効なEmailです")
-            } else {
                 return .success
+            } else {
+                return .error(with: "無効なEmailです")
             }
         }
     }

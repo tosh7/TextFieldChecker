@@ -35,6 +35,26 @@ final class SignUpViewController: UIViewController {
         self.view.backgroundColor = UIColor.saketify.backGroundColor
         setUpView()
         self.title = "新規登録"
+        emailTextField.textField.rx.text.orEmpty
+            .subscribe(onNext: viewModel.inputs.emailTextFieldDidChange)
+            .disposed(by: disosedBag)
+        passwordTextField.textField.rx.text.orEmpty
+            .subscribe(onNext: viewModel.inputs.passwordTextFieldDidChange)
+            .disposed(by: disosedBag)
+        viewModel.outputs.emailValidation.drive(onNext: { [weak self] validation in
+            print(validation)
+        }).disposed(by: disosedBag)
+        viewModel.outputs.passwordvalidation.drive(onNext: { [weak self] validation in
+            print(validation)
+        }).disposed(by: disosedBag)
+        viewModel.outputs.registerEnabled.drive(onNext: { [weak self] result in
+            self?.registerButton.isEnabled = result
+            if result {
+                self?.registerButton.alpha = 1
+            } else {
+                self?.registerButton.alpha = 0.8
+            }
+        }).disposed(by: disosedBag)
     }
     
     required init?(coder: NSCoder) { fatalError() }
@@ -48,6 +68,7 @@ final class SignUpViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.saketify.backGroundColor]
     }
     
+    private let disosedBag = DisposeBag()
     private let viewModel: SignUpViewModelType
     private let navigator: SignUpNavigatorType
     private var emailValidation: Validation = .empty
