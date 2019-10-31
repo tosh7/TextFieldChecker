@@ -13,7 +13,6 @@ final class SignUpViewController: UIViewController {
         self.viewModel = viewModel
         self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = UIColor.red
     }
     
     required init?(coder: NSCoder) { fatalError() }
