@@ -16,6 +16,17 @@ enum Validation {
     case empty
 }
 
+extension Validation {
+    var isValid: Bool {
+        switch self {
+        case .success:
+            return true
+        default:
+            return false
+        }
+    }
+}
+
 final class SignUpViewController: UIViewController {
     init(viewModel: SignUpViewModelType, navigator: SignUpNavigator) {
         self.viewModel = viewModel

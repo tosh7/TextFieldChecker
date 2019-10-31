@@ -16,6 +16,8 @@
 		2B372FCB236ACFA30037ADE4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FCA236ACFA30037ADE4 /* SignUpViewController.swift */; };
 		2B372FCD236ACFBC0037ADE4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FCC236ACFBC0037ADE4 /* SignUpViewModel.swift */; };
 		2B372FCF236ACFC80037ADE4 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FCE236ACFC80037ADE4 /* SignUpNavigator.swift */; };
+		2B3E0F91236B53710001379E /* ValidationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E0F90236B53710001379E /* ValidationChecker.swift */; };
+		2B3E0F93236B55CC0001379E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E0F92236B55CC0001379E /* String+Extension.swift */; };
 		2B5FC548236AD912009FBEA8 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC547236AD912009FBEA8 /* CustomTextFieldView.swift */; };
 		2B5FC54B236ADACE009FBEA8 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC54A236ADACE009FBEA8 /* PaddingTextField.swift */; };
 		2B5FC54D236B0CB7009FBEA8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */; };
@@ -56,6 +58,8 @@
 		2B372FCA236ACFA30037ADE4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2B372FCC236ACFBC0037ADE4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2B372FCE236ACFC80037ADE4 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
+		2B3E0F90236B53710001379E /* ValidationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationChecker.swift; sourceTree = "<group>"; };
+		2B3E0F92236B55CC0001379E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		2B5FC547236AD912009FBEA8 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		2B5FC54A236ADACE009FBEA8 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -118,10 +122,19 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		2B3E0F8F236B53410001379E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B3E0F90236B53710001379E /* ValidationChecker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2B5FC546236AD587009FBEA8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */,
+				2B3E0F92236B55CC0001379E /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 				2B0FB485235E19F700295E28 /* SceneDelegate.swift */,
 				2BA4D1A22361A7A6006E6C44 /* Top */,
 				2B372FC9236ACF830037ADE4 /* SignUp */,
+				2B3E0F8F236B53410001379E /* Models */,
 				2B5FC549236ADAB0009FBEA8 /* Util */,
 				2B5FC546236AD587009FBEA8 /* Extensions */,
 			);
@@ -265,9 +279,11 @@
 			files = (
 				2B372FCB236ACFA30037ADE4 /* SignUpViewController.swift in Sources */,
 				2B372FC8236ACC7D0037ADE4 /* TopNavigator.swift in Sources */,
+				2B3E0F91236B53710001379E /* ValidationChecker.swift in Sources */,
 				2B372FCF236ACFC80037ADE4 /* SignUpNavigator.swift in Sources */,
 				2B5FC54D236B0CB7009FBEA8 /* UIColor+Extension.swift in Sources */,
 				2BCDE7AE235EC3AC00C05C38 /* TopViewModel.swift in Sources */,
+				2B3E0F93236B55CC0001379E /* String+Extension.swift in Sources */,
 				2B0FB488235E19F700295E28 /* TopViewController.swift in Sources */,
 				2B0FB484235E19F700295E28 /* AppDelegate.swift in Sources */,
 				2B0FB486235E19F700295E28 /* SceneDelegate.swift in Sources */,
