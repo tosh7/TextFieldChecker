@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RootNavigatorType {
-    
+    func toTop()
 }
 
 final class RootNavigator: RootNavigatorType {
@@ -17,5 +17,19 @@ final class RootNavigator: RootNavigatorType {
     
     init(window: UIWindow?) {
         self.window = window
+    }
+    
+    private var rootViewController: RootViewController? {
+        return window?.rootViewController as? RootViewController
+    }
+    
+    func toTop() {
+        let navigationController = UINavigationController()
+        let navigator = TopNavigator(navigationController: navigationController)
+        let viewModel = TopViewModel()
+        let viewController = TopViewController(viewModel: viewModel,
+                                               navigator: navigator)
+        navigationController.viewControllers = [viewController]
+        rootViewController?.setContainerContent(navigationController)
     }
 }

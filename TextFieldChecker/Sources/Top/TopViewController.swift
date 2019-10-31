@@ -10,13 +10,18 @@ import UIKit
 
 final class TopViewController: UIViewController {
     
-    init() {
+    init(viewModel: TopViewModelType, navigator: TopNavigatorType) {
+        self.navigator = navigator
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.white
         setUpView()
     }
     
     required init?(coder: NSCoder) { fatalError() }
+    
+    private let viewModel: TopViewModelType
+    private let navigator: TopNavigatorType
     
     private let backGroundImageView: UIImageView = {
         let imageView = UIImageView()
