@@ -57,6 +57,7 @@ final class TopViewController: UIViewController {
     
     @objc func signUpButtonTapped() {
         print("Tapped")
+        navigator.toSignUp()
     }
 }
 

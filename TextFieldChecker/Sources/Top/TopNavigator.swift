@@ -20,5 +20,10 @@ final class TopNavigator: TopNavigatorType {
     }
     
     func toSignUp() {
+        let navigator = SignUpNavigator(navigationController: navigationController)
+        let viewModel = SignUpViewModel()
+        let viewController = SignUpViewController(viewModel: viewModel,
+                                                  navigator: navigator)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
