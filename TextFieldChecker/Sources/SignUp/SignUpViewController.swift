@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+enum Validation {
+    case success
+    case error(with: String)
+    case empty
+}
 
 final class SignUpViewController: UIViewController {
     init(viewModel: SignUpViewModelType, navigator: SignUpNavigator) {
         self.viewModel = viewModel
         self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
+        self.view.backgroundColor = UIColor.white
+        setUpView()
     }
     
     required init?(coder: NSCoder) { fatalError() }
@@ -25,4 +35,23 @@ final class SignUpViewController: UIViewController {
     
     private let viewModel: SignUpViewModelType
     private let navigator: SignUpNavigatorType
+    
+    private var emailTextField: CustomTextFieldView = {
+        let view = CustomTextFieldView()
+        view.textField.placeholder = "ここはplacefolder"
+        view.label.text = "ここにもきちんと文字が出るのかを確認"
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+}
+
+extension SignUpViewController {
+    private func setUpView() {
+        view.addSubview(emailTextField)
+        
+        emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+//        emailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
 }
