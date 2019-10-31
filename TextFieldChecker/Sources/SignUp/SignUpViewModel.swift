@@ -19,7 +19,7 @@ protocol SignUpViewModelInputs {
 protocol SignUpViewModelOutputs {
     var emailValidation: Driver<Validation> { get }
     var passwordvalidation: Driver<Validation> { get }
-    var registerButtonIsEnabled: Driver<Bool> { get }
+    var registerEnabled: Driver<Bool> { get }
 }
 
 protocol SignUpViewModelType {
@@ -29,16 +29,26 @@ protocol SignUpViewModelType {
 
 final class SignUpViewModel: SignUpViewModelType, SignUpViewModelInputs, SignUpViewModelOutputs {
     init() {
-        emailValidation = emailProperty
-            .filter { !$0.isEmpty }
-            .map { email -> Validation in
-                return .success
-        }.asDriver(onErrorJustReturn: .error(with: "謎のエラー"))
-        passwordvalidation = passwordProperty
-            .filter { !$0.isEmpty }
-            .map { password -> Validation in
-                return .success
-        }.asDriver(onErrorJustReturn: .error(with: "謎のエラー"))
+        let validEmail = emailProperty.map { email -> Validation in
+                return ValidationChecker.validateEmail(email)
+        }
+        let validPassword = passwordProperty.map { password -> Validation in
+                return ValidationChecker.validatePassword(password)
+        }
+        emailValidation = validEmail.asDriver { _ in
+            Driver.empty()
+        }
+        passwordvalidation = validPassword.asDriver { _ in
+            Driver.empty()
+        }
+        registerEnabled = Observable.combineLatest(
+            validEmail,
+            validPassword
+        ) { email, password in
+            email.isValid && password.isValid
+        }.asDriver { _ in
+            Driver.empty()
+        }
     }
     
     private let emailProperty = BehaviorRelay<String>(value: "")
@@ -58,7 +68,7 @@ final class SignUpViewModel: SignUpViewModelType, SignUpViewModelInputs, SignUpV
     
     let emailValidation: Driver<Validation>
     let passwordvalidation: Driver<Validation>
-    let registerButtonIsEnabled: Driver<Bool>
+    let registerEnabled: Driver<Bool>
     var inputs: SignUpViewModelInputs { return self }
     var outputs: SignUpViewModelOutputs { return self }
 }
