@@ -18,10 +18,10 @@ final class TopViewController: UIViewController {
     
     required init?(coder: NSCoder) { fatalError() }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = UIColor.red
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     private let backGroundImageView: UIImageView = {
