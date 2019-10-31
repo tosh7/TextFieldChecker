@@ -51,7 +51,9 @@ final class TopViewController: UIViewController {
         button.addTarget(self,
                          action: #selector(signUpButtonTapped),
                          for: .touchUpInside)
-        button.backgroundColor = UIColor.yellow
+        button.setTitle("Sign up", for: .normal)
+        button.backgroundColor = UIColor.saketify.beerYellow
+        button.layer.cornerRadius = 18
         return button
     }()
     

@@ -18,6 +18,7 @@
 		2B372FCF236ACFC80037ADE4 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B372FCE236ACFC80037ADE4 /* SignUpNavigator.swift */; };
 		2B5FC548236AD912009FBEA8 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC547236AD912009FBEA8 /* CustomTextFieldView.swift */; };
 		2B5FC54B236ADACE009FBEA8 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC54A236ADACE009FBEA8 /* PaddingTextField.swift */; };
+		2B5FC54D236B0CB7009FBEA8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */; };
 		2BA4D19F236195F4006E6C44 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4D19E236195F4006E6C44 /* RxRelay.framework */; };
 		2BA4D1A0236195F4006E6C44 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4D19E236195F4006E6C44 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BCDE7A6235E20ED00C05C38 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCDE7A5235E20ED00C05C38 /* RxSwift.framework */; };
@@ -57,6 +58,7 @@
 		2B372FCE236ACFC80037ADE4 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
 		2B5FC547236AD912009FBEA8 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		2B5FC54A236ADACE009FBEA8 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2BA4D19E236195F4006E6C44 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		2BCDE7A5235E20ED00C05C38 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		2BCDE7A9235E210100C05C38 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		2B5FC546236AD587009FBEA8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2B5FC54C236B0CB7009FBEA8 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				2B372FCB236ACFA30037ADE4 /* SignUpViewController.swift in Sources */,
 				2B372FC8236ACC7D0037ADE4 /* TopNavigator.swift in Sources */,
 				2B372FCF236ACFC80037ADE4 /* SignUpNavigator.swift in Sources */,
+				2B5FC54D236B0CB7009FBEA8 /* UIColor+Extension.swift in Sources */,
 				2BCDE7AE235EC3AC00C05C38 /* TopViewModel.swift in Sources */,
 				2B0FB488235E19F700295E28 /* TopViewController.swift in Sources */,
 				2B0FB484235E19F700295E28 /* AppDelegate.swift in Sources */,
