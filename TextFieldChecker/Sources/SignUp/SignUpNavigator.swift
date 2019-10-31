@@ -9,7 +9,6 @@
 import UIKit
 
 protocol SignUpNavigatorType {
-    func back()
 }
 
 final class SignUpNavigator: SignUpNavigatorType {
@@ -17,9 +16,5 @@ final class SignUpNavigator: SignUpNavigatorType {
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
-    }
-    
-    func back() {
-        
     }
 }
