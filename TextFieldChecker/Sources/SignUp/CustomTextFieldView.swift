@@ -32,7 +32,7 @@ final class CustomTextFieldView: UIStackView {
     lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 11)
+        label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
 }
