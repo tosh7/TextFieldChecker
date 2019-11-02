@@ -41,6 +41,11 @@ final class SignUpViewController: UIViewController {
         passwordTextField.textField.rx.text.orEmpty
             .subscribe(onNext: viewModel.inputs.passwordTextFieldDidChange)
             .disposed(by: disosedBag)
+        registerButton.rx.tap
+            .subscribe(onNext: {
+                viewModel.inputs.register()
+                print("REGISTER")
+            }).disposed(by: disosedBag)
         viewModel.outputs.emailValidation.drive(onNext: { [weak self] validation in
             switch validation {
             case .error(_, _):
@@ -113,9 +118,6 @@ final class SignUpViewController: UIViewController {
     private let registerButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self,
-                         action: #selector(registerButtonTapped),
-                         for: .touchUpInside)
         button.setTitle("Register", for: .normal)
         button.backgroundColor = UIColor.saketify.beerYellow
         button.alpha = 0.3
@@ -123,10 +125,6 @@ final class SignUpViewController: UIViewController {
         button.layer.cornerRadius = 18
         return button
     }()
-    
-    @objc func registerButtonTapped() {
-        print("REGISTER")
-    }
 }
 
 extension SignUpViewController {
