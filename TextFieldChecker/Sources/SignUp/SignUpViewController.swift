@@ -35,48 +35,7 @@ final class SignUpViewController: UIViewController {
         self.view.backgroundColor = UIColor.saketify.backGroundColor
         setUpView()
         self.title = "新規登録"
-        emailTextField.textField.rx.text.orEmpty
-            .subscribe(onNext: viewModel.inputs.emailTextFieldDidChange)
-            .disposed(by: disosedBag)
-        passwordTextField.textField.rx.text.orEmpty
-            .subscribe(onNext: viewModel.inputs.passwordTextFieldDidChange)
-            .disposed(by: disosedBag)
-        registerButton.rx.tap
-            .subscribe(onNext: {
-                viewModel.inputs.register()
-                print("REGISTER")
-            }).disposed(by: disosedBag)
-        viewModel.outputs.emailValidation.drive(onNext: { [weak self] validation in
-            switch validation {
-            case .error(_, _):
-                self?.emailTextField.label.isHidden = false
-            default:
-                self?.emailTextField.label.isHidden = true
-            }
-        }).disposed(by: disosedBag)
-        viewModel.outputs.passwordvalidation.drive(onNext: { [weak self] validation in
-            switch validation {
-            case .success:
-                self?.passwordTextField.label.isHidden = true
-            case let .error(message, count):
-                self?.passwordTextField.label.isHidden = false
-                self?.passwordTextField.label.textColor = UIColor.red
-                self?.passwordTextField.label.numberOfLines = count ?? 0
-                self?.passwordTextField.label.text = message
-            case .empty:
-                self?.passwordTextField.label.isHidden = false
-                self?.passwordTextField.label.textColor = UIColor.white
-                self?.passwordTextField.label.text = "＊英文字と数字を入れ8文字以上"
-            }
-        }).disposed(by: disosedBag)
-        viewModel.outputs.registerEnabled.drive(onNext: { [weak self] result in
-            self?.registerButton.isEnabled = result
-            if result {
-                self?.registerButton.alpha = 1
-            } else {
-                self?.registerButton.alpha = 0.8
-            }
-        }).disposed(by: disosedBag)
+        
     }
     
     required init?(coder: NSCoder) { fatalError() }
