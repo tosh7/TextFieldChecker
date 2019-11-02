@@ -17,7 +17,7 @@ final class ValidationChecker {
             if email.isEmail {
                 return .success
             } else {
-                return .error(with: "無効なEmailです")
+                return .error(message: "無効なEmailです", count: nil)
             }
         }
     }
@@ -39,7 +39,8 @@ final class ValidationChecker {
             
             if messages.count > 0 {
                 let labelText = messages.joined(separator: "\n")
-                return .error(with: labelText)
+                return .error(message: labelText,
+                              count: messages.count)
             }
             return .success
         }
